@@ -10,5 +10,4 @@ Based on a very popular game battleship. This is actually a part of my self trai
   5. statistics --pending
 
 -----------------------------
-Built By: Antriksh Kumar Singh
-Email id: 9antriksh@gmail.com
+Built By: Antriksh Kumar Singh | Email id: 9antriksh@gmail.com
