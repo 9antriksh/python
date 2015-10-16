@@ -2,6 +2,7 @@
 
 #BattleShip Game
 from random import randint
+from os import system
 
 #Creating the Board
 board=[]
@@ -10,10 +11,14 @@ for i in range(10):
 
 #Printing the Board
 def pb(b):
+    print "\n" + "-"*25 + "\n" + "|   Battleship v 0.1    |" + "\n"+"-"*25
+    print "    0 1 2 3 4 5 6 7 8 9\n"
+    count=0
     for rb in b:
-        print "   "+" ".join(rb)
+        print str(count)+"   "+" ".join(rb)
+        count += 1
 
-print "-"*25 + "\n" + "| Welcome to Battleship |" + "\n"+"-"*25
+
 pb(board)
 
 #Cordinates of BattleShip
@@ -39,8 +44,10 @@ print bcor
 for turn in range(5):
     found=False
     print "Turn Left:"+str(5-turn)
-    grow=int(raw_input("Enter Missile Cordinates X:"))
-    gcol=int(raw_input("Enter Missile Cordinates Y:"))
+    grow=int(raw_input("Enter Missile Cordinates Y:"))
+    gcol=int(raw_input("Enter Missile Cordinates X:"))
+    system("clear")
+    system("beep -f 555 -l 460")
 #check for integer remaining
    
     for c in range(4):
@@ -54,7 +61,7 @@ for turn in range(5):
         shipcount-=1
     elif shipcount == -1:
         break
-    elif (grow not in range(0,9) or gcol not in range(0,9)):
+    elif (grow not in range(0,10) or gcol not in range(0,10)):
         print "Damn!!! Out of Range Target"
     elif board[grow][gcol]=="#" or board[grow][gcol]=="X":
         print "Missile wasted Cordinates already BOMBED!"
